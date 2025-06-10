@@ -71,7 +71,7 @@ export async function getBooking(id) {
     .single();
 
   if (error) {
-    console.error(error);
+    // console.error(error);
     throw new Error("Booking could not get loaded");
   }
 
@@ -129,6 +129,8 @@ export async function getBookedDatesByCabinId(cabinId) {
 export async function getSettings() {
   const { data, error } = await supabase.from("settings").select("*").single();
 
+  // await new Promise((res) => setTimeout(res, 3000));
+
   if (error) {
     console.error(error);
     throw new Error("Settings could not be loaded");
@@ -156,7 +158,7 @@ export async function createGuest(newGuest) {
   const { data, error } = await supabase.from("guests").insert([newGuest]);
 
   if (error) {
-    console.error(error);
+    // console.error(error);
     throw new Error("Guest could not be created");
   }
 
@@ -172,7 +174,7 @@ export async function createBooking(newBooking) {
     .single();
 
   if (error) {
-    console.error(error);
+    // console.error(error);
     throw new Error("Booking could not be created");
   }
 
@@ -192,7 +194,7 @@ export async function updateGuest(id, updatedFields) {
     .single();
 
   if (error) {
-    console.error(error);
+    // console.error(error);
     throw new Error("Guest could not be updated");
   }
   return data;
@@ -207,7 +209,7 @@ export async function updateBooking(id, updatedFields) {
     .single();
 
   if (error) {
-    console.error(error);
+    // console.error(error);
     throw new Error("Booking could not be updated");
   }
   return data;
@@ -220,7 +222,7 @@ export async function deleteBooking(id) {
   const { data, error } = await supabase.from("bookings").delete().eq("id", id);
 
   if (error) {
-    console.error(error);
+    // console.error(error);
     throw new Error("Booking could not be deleted");
   }
   return data;
