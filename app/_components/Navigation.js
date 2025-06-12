@@ -46,7 +46,7 @@ export default async function Navigation() {
                   src={session.user.image}
                   alt={session.user.name}
                   referrerPolicy="no-referrer"
-                  className="rounded-full object-contain"
+                  className="object-contain rounded-full"
                 ></Image>
               </div>
               <span>Guest area</span>
