@@ -44,7 +44,7 @@ function ReservationForm({ cabin, user }) {
               src={user.image}
               alt={user.name}
               referrerPolicy="no-referrer"
-              className="rounded-full object-contain"
+              className="object-contain rounded-full"
             ></Image>
           </div>
           <p>{user.name}</p>
