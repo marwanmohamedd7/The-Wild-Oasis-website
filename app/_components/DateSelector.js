@@ -44,7 +44,7 @@ function DateSelector({ cabin, settings, bookedDates }) {
         animate
         mode="range"
         className="pt-12 place-self-center"
-        onSelect={setRange}
+        onSelect={(date) => date && setRange(date)}
         selected={displayRange}
         min={minBookingLength + 1}
         max={maxBookingLength}
